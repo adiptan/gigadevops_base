@@ -1,0 +1,120 @@
+=== Пункт 1: Поиск пакета по имени или описанию ===
+
+1.1. Поиск пакета по имени 'htop':
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Sorting...
+Full Text Search...
+aha/noble 0.5.1-3build1 amd64
+  ANSI color to HTML converter
+
+bashtop/noble 0.9.25-1 all
+  Resource monitor that shows usage and stats
+
+bpytop/noble 1.0.68-2 all
+  Resource monitor that shows usage and stats
+
+btm/noble 0.9.6-4 amd64
+
+1.2. Поиск пакета по описанию (monitor):
+erlang-os-mon - Erlang/OTP operating system monitor
+gir1.2-gtop-2.0 - gtop system monitoring library (gir bindings)
+libgtop-2.0-11 - gtop system monitoring library (shared)
+libgtop2-common - gtop system monitoring library (common)
+libgtop2-doc - gtop system monitoring library (documentation)
+arm-trusted-firmware-tools - "secure world" software for ARM SoCs - tools
+beep - advanced PC-speaker beeper
+btm - customizable graphical process/system monitor for the terminal
+cairo-dock-system-monitor-plug-in - System Monitor plug-in for Cairo-dock
+conky-all - highly configurable system monitor (all features enabled)
+
+1.3. Детальная информация о пакете htop:
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Package: htop
+Version: 3.3.0-4build1
+Priority: optional
+Section: utils
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Daniel Lange <DLange@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 434 kB
+Depends: libc6 (>= 2.38), libncursesw6 (>= 6), libnl-3-200 (>= 3.2.7), libnl-genl-3-200 (>= 3.2.7), libtinfo6 (>= 6)
+Suggests: lm-sensors, lsof, strace
+Homepage: https://htop.dev/
+Task: cloud-image, cloud-image, server, ubuntu-server-raspi, lubuntu-desktop, ubuntu-mate-core, ubuntu-mate-desktop, ubuntu-budgie-desktop-minimal, ubuntu-budgie-desktop, ubuntu-budgie-desktop-raspi
+Download-Size: 171 kB
+APT-Manual-Installed: yes
+APT-Sources: http://ru.archive.ubuntu.com/ubuntu noble/main amd64 Packages
+Description: interactive processes viewer
+
+=== Пункт 2: Установка/удаление/обновление пакетов ===
+
+2.1. Проверка, установлен ли пакет htop:
+ii  htop                                             3.3.0-4build1                             amd64        interactive processes viewer
+
+2.2. Установка пакета htop:
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+htop is already the newest version (3.3.0-4build1).
+0 upgraded, 0 newly installed, 0 to remove and 166 not upgraded.
+
+2.3. Проверка установленной версии:
+htop 3.3.0
+
+2.4. Проверка установки:
+ii  htop                                             3.3.0-4build1                             amd64        interactive processes viewer
+
+2.5. Обновление пакета (если доступна новая версия):
+Нет доступных обновлений для htop
+
+2.6. Удаление пакета htop:
+The following packages will be REMOVED:
+  htop
+0 upgraded, 0 newly installed, 1 to remove and 166 not upgraded.
+After this operation, 434 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 194934 files and directories currently installed.)
+Removing htop (3.3.0-4build1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+
+2.7. Проверка удаления:
+Пакет htop удалён
+
+=== Пункт 3: Откат пакета ===
+
+3.1. Просмотр доступных версий пакета:
+htop:
+  Installed: (none)
+  Candidate: 3.3.0-4build1
+  Version table:
+     3.3.0-4build1 500
+        500 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 Packages
+
+3.2. Установка конкретной версии (если доступно):
+Команда: apt install htop=<версия>
+(Для примера установим последнюю доступную)
+Setting up htop (3.3.0-4build1) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+
+3.3. Проверка версии после установки:
+ii  htop                                             3.3.0-4build1                             amd64        interactive processes viewer
+
+3.4. Откат через apt-mark hold (фиксация версии):
+htop set on hold.
+htop
+
+3.5. Снятие фиксации:
+Canceled hold on htop.

@@ -1,0 +1,209 @@
+=== Пункт 1: Установить пакет ===
+
+1.1. Проверка доступности пакета apache2:
+Package: apache2
+Architecture: amd64
+Version: 2.4.58-1ubuntu8.10
+Priority: optional
+Section: web
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 455
+Provides: httpd, httpd-cgi
+Pre-Depends: init-system-helpers (>= 1.54~)
+Depends: apache2-bin (= 2.4.58-1ubuntu8.10), apache2-data (= 2.4.58-1ubuntu8.10), apache2-utils (= 2.4.58-1ubuntu8.10), media-types, perl:any, procps
+Recommends: ssl-cert
+Suggests: apache2-doc, apache2-suexec-pristine | apache2-suexec-custom, www-browser, ufw
+
+1.2. Установка пакета apache2:
+The following additional packages will be installed:
+The following NEW packages will be installed:
+0 upgraded, 8 newly installed, 0 to remove and 166 not upgraded.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 194934 files and directories currently installed.)
+
+1.3. Проверка установки:
+ii  apache2                                          2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server
+ii  apache2-bin                                      2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server (modules and other binary files)
+ii  apache2-data                                     2.4.58-1ubuntu8.10                        all          Apache HTTP Server (common files)
+ii  apache2-utils                                    2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server (utility programs for web servers)
+
+=== Пункт 2: Проверить зависимости пакета ===
+
+2.1. Просмотр зависимостей apache2 (через apt-cache depends):
+apache2
+  PreDepends: init-system-helpers
+  Depends: apache2-bin
+  Depends: apache2-data
+  Depends: apache2-utils
+  Depends: media-types
+  Depends: <perl:any>
+    perl
+  Depends: procps
+  Recommends: ssl-cert
+  Suggests: apache2-doc
+ |Suggests: apache2-suexec-pristine
+  Suggests: apache2-suexec-custom
+  Suggests: <www-browser>
+    dillo
+    edbrowse
+    hv3
+    lynx
+    netsurf-fb
+    netsurf-gtk
+    chromium-browser
+    elinks
+    epiphany-browser
+    falkon
+    firefox
+    konqueror
+    links
+    links2
+    luakit
+    morph-browser
+    netrik
+    qutebrowser
+    sugar-browse-activity
+    surf
+    w3m
+    wslu
+    xemacs21-mule
+    xemacs21-mule-canna-wnn
+    xemacs21-nomule
+  Suggests: ufw
+
+2.2. Просмотр зависимостей через apt show:
+Pre-Depends: init-system-helpers (>= 1.54~)
+Depends: apache2-bin (= 2.4.58-1ubuntu8.10), apache2-data (= 2.4.58-1ubuntu8.10), apache2-utils (= 2.4.58-1ubuntu8.10), media-types, perl:any, procps
+Recommends: ssl-cert
+Suggests: apache2-doc, apache2-suexec-pristine | apache2-suexec-custom, www-browser, ufw
+Homepage: https://httpd.apache.org/
+Task: lamp-server
+Download-Size: 90.2 kB
+
+2.3. Обратные зависимости (какие пакеты зависят от apache2):
+apache2
+Reverse Depends:
+  libapache2-mod-md
+ |keystone
+ |keystone
+ |cinder-api
+ |xymon
+ |squid-cgi
+ |roundcube-core
+  prometheus-apache-exporter
+ |pagure
+ |nova-api-os-compute
+ |nagios4-cgi
+ |live-build-cgi
+  libsoup2.4-tests
+
+2.4. Детальный просмотр установленных зависимостей (через dpkg):
+ii  apache2                                          2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server
+ii  apache2-bin                                      2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server (modules and other binary files)
+ii  apache2-data                                     2.4.58-1ubuntu8.10                        all          Apache HTTP Server (common files)
+ii  apache2-utils                                    2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server (utility programs for web servers)
+
+2.5. Просмотр файлов, установленных пакетом:
+/.
+/etc
+/etc/apache2
+/etc/apache2/apache2.conf
+/etc/apache2/conf-available
+/etc/apache2/conf-available/charset.conf
+/etc/apache2/conf-available/localized-error-pages.conf
+/etc/apache2/conf-available/other-vhosts-access-log.conf
+/etc/apache2/conf-available/security.conf
+/etc/apache2/conf-available/serve-cgi-bin.conf
+/etc/apache2/conf-enabled
+/etc/apache2/envvars
+/etc/apache2/magic
+/etc/apache2/mods-available
+/etc/apache2/mods-available/access_compat.load
+/etc/apache2/mods-available/actions.conf
+/etc/apache2/mods-available/actions.load
+/etc/apache2/mods-available/alias.conf
+/etc/apache2/mods-available/alias.load
+/etc/apache2/mods-available/allowmethods.load
+
+=== Пункт 3: Очистка неиспользуемых зависимостей ===
+
+3.1. Проверка пакетов, которые больше не нужны:
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 166 not upgraded.
+
+3.2. Просмотр пакетов, установленных автоматически (зависимости):
+accountsservice
+acl
+adduser
+adwaita-icon-theme
+alsa-base
+alsa-topology-conf
+alsa-ucm-conf
+alsa-utils
+amd64-microcode
+anacron
+apache2-bin
+apache2-data
+apache2-utils
+apg
+apparmor
+apport
+apport-core-dump-handler
+apport-gtk
+apport-symptoms
+appstream
+
+3.3. Поиск устаревших пакетов в кэше:
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Del libexpat1-dev 2.6.1-2ubuntu0.3 [140 kB]
+Del libssh-gcrypt-4 0.10.6-2ubuntu0.2 [224 kB]
+Del libgfortran5 14.2.0-4ubuntu2~24.04 [916 kB]
+
+3.4. Удаление apache2 для демонстрации очистки зависимостей:
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libaprutil1t64
+Use 'apt autoremove' to remove them.
+The following packages will be REMOVED:
+  apache2
+0 upgraded, 0 newly installed, 1 to remove and 166 not upgraded.
+After this operation, 466 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 195638 files and directories currently installed.)
+Removing apache2 (2.4.58-1ubuntu8.10) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for ufw (0.36.2-6) ...
+
+3.5. Очистка оставшихся зависимостей:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libaprutil1t64
+0 upgraded, 0 newly installed, 7 to remove and 166 not upgraded.
+After this operation, 7,008 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 195588 files and directories currently installed.)
+Removing apache2-bin (2.4.58-1ubuntu8.10) ...
+dpkg: warning: while removing apache2-bin, directory '/var/lib/apache2' not empty so not removed
+Removing apache2-data (2.4.58-1ubuntu8.10) ...
+Removing apache2-utils (2.4.58-1ubuntu8.10) ...
+Removing libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Removing libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Removing libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Removing libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+
+3.6. Проверка результата:
+rc  apache2                                          2.4.58-1ubuntu8.10                        amd64        Apache HTTP Server
