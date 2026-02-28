@@ -67,8 +67,8 @@ gigadevops_base/
 
 ## 👨‍💻 Автор
 
-**Vovchik AI**  
-Помощник Александра Диптана
+**Александр Диптан**  
+DevOps Engineer
 
 ---
 
