@@ -1,0 +1,17 @@
+#!/bin/bash
+# Скрипт мониторинга системы MyApp
+
+echo "=== MyApp System Monitor ==="
+echo "Дата: $(date)"
+echo ""
+echo "Использование CPU:"
+top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
+echo ""
+echo "Использование памяти:"
+free -h | grep Mem | awk '{print "Использовано: "$3" из "$2}'
+echo ""
+echo "Использование диска:"
+df -h / | tail -1 | awk '{print "Использовано: "$3" из "$2" ("$5")"}'
+echo ""
+echo "Версия: 1.0.1 (обновлённая)"
+echo "Версия: 1.0.1 (обновлённая)"

@@ -1,0 +1,143 @@
+=== Шаг 1: Создание новой версии пакета (1.0.1) ===
+dpkg-deb: building package 'myapp-config' in 'myapp-config_1.0.1_all.deb'.
+
+=== Шаг 2: Добавление нового пакета в репозиторий ===
+Пакеты в репозитории:
+total 8.0K
+-rw-r--r-- 1 root root 2.0K Feb 28 13:37 myapp-config_1.0.0_all.deb
+-rw-r--r-- 1 root root 2.0K Feb 28 13:39 myapp-config_1.0.1_all.deb
+
+=== Шаг 3: Обновление метаданных репозитория ===
+dpkg-scanpackages: warning: package myapp-config (filename pool/main/myapp-config_1.0.0_all.deb) is repeat; ignored that one and using data from pool/main/myapp-config_1.0.1_all.deb!
+dpkg-scanpackages: warning: Packages with multiple instances but no --multiversion specified:
+dpkg-scanpackages: warning: pool/main/myapp-config_1.0.0_all.deb
+dpkg-scanpackages: warning: pool/main/myapp-config_1.0.1_all.deb
+dpkg-scanpackages: info: Wrote 1 entries to output Packages file.
+./test_auto_update.sh: line 40: dists/stable/main/binary-/Packages: No such file or directory
+touch: cannot touch 'dists/stable/main/binary-/Packages': No such file or directory
+./test_auto_update.sh: line 41: dists/stable/main/binary-/Packages.gz: No such file or directory
+Release файл обновлён
+
+=== Шаг 4: Обновление списка пакетов ===
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Ign:1 http://localhost/myrepo stable InRelease
+Get:2 http://localhost/myrepo stable Release [2,411 B]
+Ign:3 http://localhost/myrepo stable Release.gpg
+Get:4 http://localhost/myrepo stable/main all Packages [462 B]
+Hit:5 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Hit:6 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:7 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:8 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:9 https://download.docker.com/linux/ubuntu noble InRelease
+Fetched 2,873 B in 1s (5,227 B/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+167 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+=== Шаг 5: Проверка доступных обновлений ===
+myapp-config/stable 1.0.1 all [upgradable from: 1.0.0]
+
+=== Шаг 6: Обновление пакета ===
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following package was automatically installed and is no longer required:
+  libllvm19
+Use 'apt autoremove' to remove it.
+Get more security updates through Ubuntu Pro with 'esm-apps' enabled:
+  libzvbi-common libcjson1 libavdevice60 ffmpeg libpostproc57 libavcodec60
+  libzvbi0t64 libavutil58 libswscale7 libswresample4 libavformat60
+  libavfilter9
+Learn more about Ubuntu Pro at https://ubuntu.com/pro
+The following packages will be upgraded:
+  alsa-ucm-conf apparmor base-files bluez bluez-cups bluez-obexd bsdextrautils
+  bsdutils cloud-init coreutils dconf-cli dconf-gsettings-backend
+  dconf-service dhcpcd-base distro-info-data docker-compose-plugin
+  docker-model-plugin eject fdisk fwupd gdm3 gir1.2-gdm-1.0 gir1.2-gtk-4.0
+  gir1.2-mutter-14 gir1.2-nm-1.0 gir1.2-packagekitglib-1.0
+  gnome-control-center gnome-control-center-data gnome-control-center-faces
+  gnome-remote-desktop gnome-settings-daemon gnome-settings-daemon-common
+  gnome-shell gnome-shell-common gnome-shell-extension-desktop-icons-ng
+  gstreamer1.0-packagekit gstreamer1.0-pipewire initramfs-tools
+  initramfs-tools-bin initramfs-tools-core language-pack-en
+  language-pack-en-base language-pack-gnome-en language-pack-gnome-en-base
+  ldap-utils libapparmor1 libblkid1 libbluetooth3 libdconf1 libfdisk1
+  libfprint-2-2 libfprint-2-tod1 libfwupd2 libgdm1 libgphoto2-6t64
+  libgphoto2-l10n libgphoto2-port12t64 libgtk-4-1 libgtk-4-bin libgtk-4-common
+  libgtk-4-media-gstreamer libgtop-2.0-11 libgtop2-common libinput-bin
+  libinput10 libipa-hbac0t64 libldap-common libldap2 libmalcontent-0-0
+  libmbim-glib4 libmbim-proxy libmbim-utils libmount1 libmtp-common
+  libmtp-runtime libmtp9t64 libmutter-14-0 libnautilus-extension4 libnetplan1
+  libnm0 libnss-sss libnss-systemd libnuma1 libpackagekit-glib2-18 libpam-sss
+  libpam-systemd libpipewire-0.3-0t64 libpipewire-0.3-common
+  libpipewire-0.3-modules libqpdf29t64 libsmartcols1 libspa-0.2-bluetooth
+  libspa-0.2-modules libsss-certmap0 libsss-idmap0 libsss-nss-idmap0
+  libsystemd-shared libsystemd0 libudev1 libuuid1 libwhoopsie0
+  libwireplumber-0.4-0 libxatracker2 linux-firmware mount mutter-common
+  mutter-common-bin myapp-config nautilus nautilus-data netplan-generator
+  netplan.io network-manager network-manager-config-connectivity-ubuntu
+  numactl packagekit packagekit-tools pipewire pipewire-alsa pipewire-audio
+  pipewire-bin pipewire-pulse powermgmt-base python-apt-common python3-apt
+  python3-distupgrade python3-netplan python3-software-properties python3-sss
+  rfkill snapd software-properties-common software-properties-gtk sssd sssd-ad
+  sssd-ad-common sssd-common sssd-ipa sssd-krb5 sssd-krb5-common sssd-ldap
+  sssd-proxy systemd systemd-dev systemd-hwe-hwdb systemd-oomd
+  systemd-resolved systemd-sysv systemd-timesyncd tcpdump tecla
+  ubuntu-drivers-common ubuntu-pro-client ubuntu-pro-client-l10n
+  ubuntu-release-upgrader-core ubuntu-release-upgrader-gtk udev util-linux
+  uuid-runtime whoopsie wireplumber wpasupplicant xdg-dbus-proxy
+  xserver-xorg-video-amdgpu xserver-xorg-video-nouveau xserver-xorg-video-vesa
+  xwayland
+167 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 668 MB of archives.
+After this operation, 13.8 MB of additional disk space will be used.
+Get:1 http://localhost/myrepo stable/main all myapp-config all 1.0.1 [2,008 B]
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 base-files amd64 13ubuntu10.4 [73.3 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 bsdutils amd64 1:2.39.3-9ubuntu6.4 [95.6 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 coreutils amd64 9.4-3ubuntu6.1 [1,413 kB]
+Get:5 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-compose-plugin amd64 5.1.0-1~ubuntu.24.04~noble [7,847 kB]
+Get:6 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 util-linux amd64 2.39.3-9ubuntu6.4 [1,128 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mount amd64 2.39.3-9ubuntu6.4 [118 kB]
+Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss-systemd amd64 255.4-1ubuntu8.12 [159 kB]
+Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd-dev all 255.4-1ubuntu8.12 [106 kB]
+Get:10 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libblkid1 amd64 2.39.3-9ubuntu6.4 [123 kB]
+Get:11 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd-timesyncd amd64 255.4-1ubuntu8.12 [35.3 kB]
+Get:12 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd-resolved amd64 255.4-1ubuntu8.12 [296 kB]
+Get:13 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-model-plugin amd64 1.1.8-1~ubuntu.24.04~noble [7,223 kB]
+Get:14 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd-oomd amd64 255.4-1ubuntu8.12 [39.2 kB]
+Get:15 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsystemd-shared amd64 255.4-1ubuntu8.12 [2,077 kB]
+Get:16 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsystemd0 amd64 255.4-1ubuntu8.12 [435 kB]
+Get:17 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd-sysv amd64 255.4-1ubuntu8.12 [11.9 kB]
+Get:18 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libpam-systemd amd64 255.4-1ubuntu8.12 [235 kB]
+Get:19 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 systemd amd64 255.4-1ubuntu8.12 [3,475 kB]
+Get:20 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 udev amd64 255.4-1ubuntu8.12 [1,874 kB]
+Get:21 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libudev1 amd64 255.4-1ubuntu8.12 [177 kB]
+Get:22 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libapparmor1 amd64 4.0.1really4.0.1-0ubuntu0.24.04.5 [50.5 kB]
+Get:23 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libmount1 amd64 2.39.3-9ubuntu6.4 [134 kB]
+Get:24 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libuuid1 amd64 2.39.3-9ubuntu6.4 [35.9 kB]
+Get:25 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfdisk1 amd64 2.39.3-9ubuntu6.4 [146 kB]
+Get:26 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsmartcols1 amd64 2.39.3-9ubuntu6.4 [65.6 kB]
+Get:27 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 uuid-runtime amd64 2.39.3-9ubuntu6.4 [33.1 kB]
+Get:28 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 bluez amd64 5.72-0ubuntu5.5 [1,361 kB]
+Get:29 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-en all 1:24.04+20260127 [1,892 B]
+Get:30 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-en-base all 1:24.04+20260127 [446 kB]
+Get:31 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-gnome-en all 1:24.04+20260127 [1,920 B]
+Get:32 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 language-pack-gnome-en-base all 1:24.04+20260127 [354 kB]
+Get:33 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 python-apt-common all 2.7.7ubuntu5.2 [20.6 kB]
+Get:34 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 distro-info-data all 0.60ubuntu0.5 [6,934 B]
+Get:35 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-apt amd64 2.7.7ubuntu5.2 [169 kB]
+Get:36 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 ubuntu-drivers-common amd64 1:0.9.7.6ubuntu3.5 [65.9 kB]
+Get:37 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 whoopsie amd64 0.2.77ubuntu0.1 [20.0 kB]
+Get:38 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libwhoopsie0 amd64 0.2.77ubuntu0.1 [11.0 kB]
+Get:39 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 dhcpcd-base amd64 1:10.0.6-1ubuntu3.2 [215 kB]
+Get:40 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 eject amd64 2.39.3-9ubuntu6.4 [26.3 kB]
+Get:41 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 netplan-generator amd64 1.1.2-8ubuntu1~24.04.1 [61.2 kB]
+Get:42 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-netplan amd64 1.1.2-8ubuntu1~24.04.1 [24.3 kB]
+Get:43 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-firmware amd64 20240318.git3b128b60-0ubuntu2.25 [560 MB]

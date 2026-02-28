@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+echo "MyApp Config: Настройка после установки..."
+
+# Создание логов
+mkdir -p /var/log/myapp
+chmod 755 /var/log/myapp
+
+echo "MyApp Config установлен успешно!"
+exit 0

@@ -1,0 +1,64 @@
+=== Создание структуры пакета ===
+
+=== Создание control файла ===
+
+=== Создание postinst скрипта ===
+
+=== Создание prerm скрипта ===
+
+=== Создание исполняемого скрипта ===
+
+=== Создание конфигурационного файла ===
+
+=== Создание README ===
+
+=== Создание changelog ===
+
+=== Структура пакета ===
+./create_deb_package.sh: line 140: tree: command not found
+myapp-config_1.0.0_all/DEBIAN/postinst
+myapp-config_1.0.0_all/DEBIAN/control
+myapp-config_1.0.0_all/DEBIAN/prerm
+myapp-config_1.0.0_all/etc/myapp/config.conf
+myapp-config_1.0.0_all/usr/share/doc/myapp-config/changelog.gz
+myapp-config_1.0.0_all/usr/share/doc/myapp-config/README
+myapp-config_1.0.0_all/usr/local/bin/myapp-monitor
+
+=== Сборка .deb пакета ===
+dpkg-deb: building package 'myapp-config' in 'myapp-config_1.0.0_all.deb'.
+
+=== Информация о пакете ===
+ new Debian package, version 2.0.
+ size 1982 bytes: control archive=595 bytes.
+     390 bytes,    11 lines      control
+     238 bytes,    11 lines   *  postinst             #!/bin/bash
+      92 bytes,     5 lines   *  prerm                #!/bin/bash
+ Package: myapp-config
+ Version: 1.0.0
+ Section: utils
+ Priority: optional
+ Architecture: all
+ Maintainer: Vovchik <vovchik@openclaw.ai>
+ Description: Конфигурационные файлы и скрипты для MyApp
+  Этот пакет содержит:
+   - Скрипт мониторинга системы
+   - Конфигурационные файлы
+   - Документацию
+
+=== Содержимое пакета ===
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./etc/
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./etc/myapp/
+-rw-r--r-- root/root       247 2026-02-28 13:34 ./etc/myapp/config.conf
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/local/
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/local/bin/
+-rwxr-xr-x root/root       541 2026-02-28 13:34 ./usr/local/bin/myapp-monitor
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/share/
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-02-28 13:34 ./usr/share/doc/myapp-config/
+-rw-r--r-- root/root       466 2026-02-28 13:34 ./usr/share/doc/myapp-config/README
+-rw-r--r-- root/root       194 2026-02-28 13:34 ./usr/share/doc/myapp-config/changelog.gz
+
+=== Пакет создан: myapp-config_1.0.0_all.deb ===
+-rw-r--r-- 1 root root 2.0K Feb 28 13:34 myapp-config_1.0.0_all.deb

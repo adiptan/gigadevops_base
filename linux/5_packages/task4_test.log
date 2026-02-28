@@ -1,0 +1,109 @@
+=== Шаг 1: Проверка пакета перед установкой ===
+ new Debian package, version 2.0.
+ size 1982 bytes: control archive=595 bytes.
+     390 bytes,    11 lines      control
+     238 bytes,    11 lines   *  postinst             #!/bin/bash
+      92 bytes,     5 lines   *  prerm                #!/bin/bash
+ Package: myapp-config
+ Version: 1.0.0
+ Section: utils
+ Priority: optional
+ Architecture: all
+ Maintainer: Vovchik <vovchik@openclaw.ai>
+ Description: Конфигурационные файлы и скрипты для MyApp
+  Этот пакет содержит:
+   - Скрипт мониторинга системы
+   - Конфигурационные файлы
+   - Документацию
+
+=== Шаг 2: Установка пакета ===
+Selecting previously unselected package myapp-config.
+(Reading database ... 196292 files and directories currently installed.)
+Preparing to unpack myapp-config_1.0.0_all.deb ...
+Unpacking myapp-config (1.0.0) ...
+Setting up myapp-config (1.0.0) ...
+MyApp Config: Настройка после установки...
+MyApp Config установлен успешно!
+
+=== Шаг 3: Проверка установки ===
+ii  myapp-config                                     1.0.0                                     all          Конфигурационные файлы и скрипты для MyApp
+
+=== Шаг 4: Проверка файлов ===
+Файлы пакета:
+/.
+/etc
+/etc/myapp
+/etc/myapp/config.conf
+/usr
+/usr/local
+/usr/local/bin
+/usr/local/bin/myapp-monitor
+/usr/share
+/usr/share/doc
+/usr/share/doc/myapp-config
+/usr/share/doc/myapp-config/README
+/usr/share/doc/myapp-config/changelog.gz
+
+=== Шаг 5: Проверка работы скрипта ===
+/usr/local/bin/myapp-monitor
+=== MyApp System Monitor ===
+Дата: Sat Feb 28 01:35:23 PM MSK 2026
+
+Использование CPU:
+0%
+
+Использование памяти:
+Использовано: 2.2Gi из 7.8Gi
+
+Использование диска:
+Использовано: 25G из 50G (53%)
+
+=== Шаг 6: Проверка конфигурации ===
+# MyApp Configuration File
+# Version: 1.0.0
+
+[General]
+app_name = MyApp
+version = 1.0.0
+debug_mode = false
+
+[Monitoring]
+check_interval = 60
+log_level = info
+log_path = /var/log/myapp/monitor.log
+
+[Alerts]
+enabled = true
+email = admin@example.com
+
+=== Шаг 7: Проверка логов ===
+total 8
+drwxr-xr-x  2 root root   4096 Feb 28 13:35 .
+drwxrwxr-x 19 root syslog 4096 Feb 28 13:35 ..
+
+=== Шаг 8: Удаление пакета ===
+(Reading database ... 196300 files and directories currently installed.)
+Removing myapp-config (1.0.0) ...
+MyApp Config: Подготовка к удалению...
+dpkg: warning: while removing myapp-config, directory '/usr/local/bin' not empty so not removed
+
+=== Шаг 9: Проверка удаления ===
+Пакет успешно удалён
+
+=== Шаг 10: Проверка оставшихся файлов ===
+Конфигурация удалена
+Скрипт удалён
+
+=== Шаг 11: Полное удаление (purge) ===
+
+=== Шаг 12: Повторная установка для проверки ===
+Selecting previously unselected package myapp-config.
+(Reading database ... 196292 files and directories currently installed.)
+Preparing to unpack myapp-config_1.0.0_all.deb ...
+Unpacking myapp-config (1.0.0) ...
+Setting up myapp-config (1.0.0) ...
+MyApp Config: Настройка после установки...
+MyApp Config установлен успешно!
+ii  myapp-config                                     1.0.0                                     all          Конфигурационные файлы и скрипты для MyApp
+
+=== Тестирование завершено ===

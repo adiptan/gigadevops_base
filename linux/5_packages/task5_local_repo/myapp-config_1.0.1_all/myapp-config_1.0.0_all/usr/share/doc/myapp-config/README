@@ -1,0 +1,15 @@
+MyApp Config Package
+====================
+
+Этот пакет содержит конфигурационные файлы и утилиты для MyApp.
+
+Файлы:
+- /usr/local/bin/myapp-monitor - скрипт мониторинга
+- /etc/myapp/config.conf - конфигурация
+- /var/log/myapp/ - директория логов
+
+Использование:
+  myapp-monitor - запуск мониторинга
+
+Автор: Vovchik
+Версия: 1.0.0

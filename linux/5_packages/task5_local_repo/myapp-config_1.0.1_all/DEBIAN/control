@@ -1,0 +1,11 @@
+Package: myapp-config
+Version: 1.0.1
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Vovchik <vovchik@openclaw.ai>
+Description: Конфигурационные файлы и скрипты для MyApp
+ Этот пакет содержит:
+  - Скрипт мониторинга системы
+  - Конфигурационные файлы
+  - Документацию
