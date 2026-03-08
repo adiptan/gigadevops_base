@@ -22,4 +22,12 @@
 
 ---
 
+### [03_dns_https](./03_dns_https/) - DNS и HTTP(S)
+**Описание:** Работа с DNS, HTTP/HTTPS протоколами, SSL/TLS сертификатами  
+**Темы:** DNS (dig, nslookup, BIND), HTTP методы (curl), OpenSSL, HTTP/2 vs HTTP/1.1  
+**Заданий:** 5  
+**Статус:** ✅ Выполнено (2026-03-08)
+
+---
+
 [◀ Назад к главной странице](../README.md)
